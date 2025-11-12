@@ -9,7 +9,7 @@ const router = express.Router()
             if (err) {
                 next(err)
             }
-            res.send(result)
+            res.render("list.ejs", {availableBooks:result})
          });
     });
 
@@ -17,10 +17,11 @@ router.get('/search',function(req, res, next){
     res.render("search.ejs")
 });
 
-router.get('/search-result', function (req, res, next) {
-    //searching in the database
-    res.send("You searched for: " + req.query.keyword)
-});
+// router.get('/search-result', function (req, res, next) {
+//     //searching in the database
+//     res.send("You searched for: " + req.query.keyword)
+// });
+
 
 // Export the router object so index.js can access it
 module.exports = router

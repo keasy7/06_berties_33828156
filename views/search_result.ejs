@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome to <%=shopData.shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1><%=shopData.shopName%> Shop</h1>
+    <h2>Results matching your search:</h2>
+    <ul></ul>
+        <% result.forEach(book => { %>
+      <li><%= book.name %>, £<%= book.price %></li>
+    <% }) %>
+    </ul>
+  </body>
+</html>
