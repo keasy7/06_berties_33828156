@@ -23,3 +23,5 @@ I set up some variables in another file and called them within the createPool fu
 Audit:
 To create a history of sign in attmepts, i created another database called login_attempts and put that into the create_db.sql.
 then in the /loggedin logic i created a function that takes the username and success (bool) and deposits them into the new database.
+
+/users/audit takes you to a page of all login attempts

@@ -43,6 +43,17 @@ router.get('/list', function(req, res, next) {
      });
 });
 
+router.get('/audit', function(req, res, next) {
+    let sqlquery = "SELECT * FROM login_attempts"; // query database to get all the books
+    // execute sql query
+    db.query(sqlquery, (err, result) => {
+        if (err) {
+            next(err)
+        }
+        res.render("audit.ejs", {auditList:result})
+     });
+});
+
 router.get('/login', function (req, res, next) {
     res.render('login.ejs')
 })
