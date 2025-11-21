@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS users (
     last     VARCHAR(50),
     email    VARCHAR(100),
     username VARCHAR(50),
-    password VARCHAR(256)
+    password VARCHAR(256),
     PRIMARY KEY(id));
 
 CREATE TABLE IF NOT EXISTS login_attempts (
@@ -29,5 +29,5 @@ CREATE TABLE IF NOT EXISTS login_attempts (
 
 # Create the application user
 CREATE USER IF NOT EXISTS 'berties_books_app'@'localhost' IDENTIFIED BY 'qwertyuiop'; 
-GRANT ALL PRIVILEGES ON berties_books.* TO ' berties_books_app'@'localhost';
+GRANT ALL PRIVILEGES ON berties_books.* TO 'berties_books_app'@'localhost';
 
