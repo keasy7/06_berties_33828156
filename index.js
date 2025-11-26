@@ -4,7 +4,7 @@ var ejs = require('ejs')
 const path = require('path')
 var mysql = require('mysql2')
 require('dotenv').config()
-
+var session = require('express-session')
 // Create the express application object
 const app = express()
 const port = 8000
@@ -17,6 +17,17 @@ app.use(express.urlencoded({ extended: true }))
 
 // Set up public folder (for css and static js)
 app.use(express.static(path.join(__dirname, 'public')))
+
+// Set up the session middleware
+app.use(session({
+    secret: 'somerandomstuff',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}))
+
 
 // Define our application-specific data
 app.locals.shopData = {shopName: "Bertie's Books"}
