@@ -42,3 +42,7 @@ i have added input validation to the login, addbook as well as search books.
 the sanitizer runs a chain of input validation to make sure inputs can be trusted.
 i have already validated against emails so i havent used sanitize on it.
 i also didnt use it on the password as it may change what the user inputs before it's encrypted, meaning the user could lose their account for no reason.
+
+my api:
+
+my api takes the end of the books? url and breaks it down into variables like search, minmax and sort. from there, it is able to add to an overarching sql query that is only executed once the entire url is analysed. it is also able to handle any of the inputs missing or incorrect, returning the full list.

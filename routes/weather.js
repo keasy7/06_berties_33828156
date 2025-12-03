@@ -7,7 +7,7 @@ const request = require('request')
 router.get('/',function(req, res, next){
         // console.log("Fetching weather data")
         let apiKey = '994d7903de0f200dba4661f43be2daf8'
-        let city = req.query.weather_city || 'london'
+        let city = req.query.weather_city || 'london' //defaults to london if no city given
         let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
         // console.log(url)             
         request(url, function (err, response, body) {
@@ -16,7 +16,7 @@ router.get('/',function(req, res, next){
           } else {
             // res.send(body)
             var weather = JSON.parse(body)
-            if (weather.main == undefined){
+            if (weather.main == undefined){ //error handling
                 var wmsg = 'City not found. Please try again.'
                 res.render('weather.ejs', {wmsg: wmsg});
                 return
