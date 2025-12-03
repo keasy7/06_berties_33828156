@@ -46,3 +46,6 @@ i also didnt use it on the password as it may change what the user inputs before
 my api:
 
 my api takes the end of the books? url and breaks it down into variables like search, minmax and sort. from there, it is able to add to an overarching sql query that is only executed once the entire url is analysed. it is also able to handle any of the inputs missing or incorrect, returning the full list.
+my api also has inconsistent naming for min and max as that's how it was demonstrated in the guide:     
+const min = req.query.minprice;
+const max = req.query.max_price;
